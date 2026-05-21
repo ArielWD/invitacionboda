@@ -253,6 +253,8 @@ p{
 }
 
 #flor-2{
+    overflow-x: hidden;
+    overflow-y: hidden;
     position: relative;
     z-index: 10;
 }
@@ -261,7 +263,7 @@ p{
     z-index: -1;
     position: absolute;
     width: 65%;
-    top: 0px;
+    top: -35px;
     left: -50px;
     transform: rotate(25deg) translateX(50%);
     opacity: .2;
