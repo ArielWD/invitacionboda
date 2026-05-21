@@ -1,0 +1,399 @@
+@font-face {
+    font-family: 'Tangerine';
+    src: url('fonts/Tangerine/Tangerine-Regular.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Josefin Sans';
+    src: url('fonts/Josefin_Sans/JosefinSans-VariableFont_wght.ttf') format('truetype');
+}
+
+body{
+    background-color: aliceblue;
+    overflow-x: hidden;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+h1, h2, h3, h4{
+    margin: 0;
+    padding: 0;
+}
+h1{
+    font-family: 'Tangerine';
+    font-weight: normal;
+    font-size: 4rem;
+}
+h2{
+    font-family: 'Tangerine';
+    font-weight: normal;
+    font-size: 4rem;
+}
+h3{
+    font-family: 'Josefin Sans';
+    font-size: 1.5rem;
+    color: #0047AB;
+    font-weight: normal;
+}
+h4{
+    font-family: 'Tangerine';
+    font-size: 2.3rem;
+    font-weight: normal;
+}
+p{
+    font-family: 'Josefin Sans';
+    font-size: 1rem;
+}
+.container{
+    background-color: white;
+    max-width: 420px;
+    margin: 0 auto;
+    padding: 0;
+    box-shadow: 0px 0px 19px -7px #000000
+}
+.div-1{
+    margin: 0 auto;
+    padding: 0;
+    max-width: 420px;
+}
+.div-1 img{
+    width: 100%;
+    mask-image: linear-gradient(
+        black 70%,
+        transparent
+    );
+}
+.galeria-container{
+    width: 100%;
+    position: relative;
+    overflow: hidden;    
+}
+.galeria{
+    display: none;
+    margin: 1rem auto;
+    width: 80%;
+    background-color: white;
+    box-shadow: 0px 0px 19px -3px #000000;
+    padding: 20px 20px 70px 20px;
+}
+.galeria img{
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* Contenedor de los puntos inferiores */
+.dots-container {
+  text-align: center;
+  position: absolute;
+  bottom: 40px;
+  width: 100%;
+}
+
+/* Los puntos indicadores */
+.dot {
+  cursor: pointer;
+  height: 12px;
+  width: 12px;
+  margin: 0 5px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active-galeria, .dot:hover {
+  background-color: #0047AB; /* Color activo que hace juego con el botón */
+}
+
+/* Animación de desvanecimiento (Fade) */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from { opacity: .4 } 
+  to { opacity: 1 }
+}
+.div-4, .div-6, .div-7, .div-8, .div-9, .div-10, .div-11, .div-12, .div-13{
+    margin: 4rem auto;
+}
+.div-2 {
+    margin: 2rem auto;
+}
+.casamos{
+    font-size: 1.8rem;
+}
+.div-4{
+    width: 80%;
+}
+.div-6{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.div-6 img{
+    width: 15%;
+}
+.div-6 p{
+    margin: 0 auto;
+}
+.div-8{
+    width: 95%;
+}
+.flex{
+    width: 90%;
+    display: flex;
+    margin: 3rem auto;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+.flex img{
+    width: 30%;
+}
+.flex h4{
+    font-size: 3rem;
+}
+.div-12, .div-13{
+    width: 80%;
+}
+.div-11{
+   width: 90%;
+}
+
+.div-11 h2{
+    margin: .5rem 0;
+    line-height: 3rem;
+}
+.div-3{
+    margin: 2rem auto;
+}
+.div-3 p{
+    font-size: 1.5rem;
+}
+.countdown-container {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding-bottom: 2rem;
+}
+
+.time-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.time-value {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #002D62;
+}
+
+.time-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #666;
+  margin-top: 5px;
+}
+
+.hidden { display: none; }
+#wedding-message {
+    font-size: 2rem;
+    color: #002D62;
+    text-align: center;
+    padding-bottom: 2rem;
+}
+.div-7{
+    width: 90%;
+}
+.icono{
+    opacity: .8;
+    mix-blend-mode: multiply;
+}
+.div-9{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+.div-9 img{
+    width: 40%;
+}
+.div-13 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;  
+}
+.div-13 .qr{
+    width: 30%;
+}
+#flor-1{
+    position: relative;
+    z-index: 10;
+}
+
+#flor-1 .flor-corner{
+    z-index: -1;
+    position: absolute;
+    width: 90%;
+    top: 40px;
+    left: -150px;
+    transform: translateX(50%);
+    opacity: .2;
+}
+
+#flor-2{
+    position: relative;
+    z-index: 10;
+}
+
+#flor-2 .flor-up{
+    z-index: -1;
+    position: absolute;
+    width: 65%;
+    top: 0px;
+    left: -50px;
+    transform: rotate(25deg) translateX(50%);
+    opacity: .2;
+}
+#flor-2 .flor-up.left{
+    top: 100px;
+    left: 150px;
+    transform: rotate(-50deg) translateX(-50%);
+}
+.pinmaps{
+    animation: pulse 2s infinite;
+}
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(.7);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* 1. Estado inicial: Oculto y un poco hacia abajo */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px); /* Empuja el texto 40px hacia abajo */
+  transition: all 1s ease-out; /* Define una transición suave de 1 segundo */
+}
+
+/* 2. Estado activo: Visible y en su posición original */
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0); /* Regresa a su lugar original */
+}
+
+#splash-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff; /* Mismo color de fondo de tu web */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Para que esté por encima de todo */
+    transition: opacity 0.8s ease; /* Transición suave de 0.8 segundos */
+}
+
+#splash-screen img {
+    max-width: 100%; /* Asegura que la imagen sea responsiva */
+    height: auto;
+}
+
+/* Esta clase la añadiremos con JavaScript para ocultar el div */
+.hidden {
+    opacity: 0;
+    pointer-events: none; /* Esto evita que el usuario haga clic en la imagen mientras desaparece */
+}
+
+.btn-boda {
+    border: none;
+    background: none;
+    cursor: pointer;
+    margin: 0;
+}
+.btn-boda:hover img {
+    transform: scale(1.1);
+}
+.btn-boda img {
+    width: 100%;
+    max-width: 150px;
+    transition: transform 0.3s ease;
+}
+/* El Modal (Fondo oscuro transparente) */
+.modal {
+  display: none; /* Oculto por defecto */
+  position: fixed;
+  z-index: 10000; /* Por encima de la pantalla de carga incluso */
+  left: -50%;
+  top: -20%;
+  transform: translate(50%, 50%);
+  width: 100%;
+
+}
+
+/* Caja del contenido del modal */
+.modal-content {
+    padding: 1rem;
+    margin: auto;
+    background-color: #fcfaf7;
+    border-radius: 12px;
+    width:90%;
+    max-width: 450px;
+    position: relative;
+    font-family: sans-serif;
+}
+
+/* Botón cerrar (X) */
+.close-modal {
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  font-size: 28px;
+  cursor: pointer;
+  color: #aaa;
+}
+.close-modal:hover { color: #333; }
+
+/* Estilos del formulario */
+.subtitle { font-size: 0.9rem; color: #666; margin-bottom: 20px; }
+.form-group { margin-bottom: 15px; text-align: left; }
+.form-group label { display: block; margin-bottom: 5px; font-size: 0.9rem; color: #333; }
+.form-group input, .form-group select, .form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+  font-size: 1rem;
+}
+#btn-enviar { 
+    color: white;
+    font-size: 1rem;
+    border-radius: 1rem;
+    padding: .5rem;
+    background-color: #666;
+    width: 50%; 
+    margin-top: 1rem;
+}
+#btn-enviar:hover {
+    background-color: #333;
+}
