@@ -9,7 +9,6 @@
 
 body{
     background-color: aliceblue;
-    overflow-x: hidden;
     text-align: center;
     margin: 0;
     padding: 0;
@@ -127,6 +126,28 @@ p{
 }
 .div-4{
     width: 80%;
+}
+#flor-2{
+    position: relative;
+}
+#flor-3{
+    position: relative;
+}
+.flor-up{
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    opacity: .2;
+}
+.flor-mid{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    opacity: .2;
 }
 .div-6{
     display: flex;
@@ -252,27 +273,7 @@ p{
     opacity: .2;
 }
 
-#flor-2{
-    overflow-x: hidden;
-    overflow-y: hidden;
-    position: relative;
-    z-index: 10;
-}
 
-#flor-2 .flor-up{
-    z-index: -1;
-    position: absolute;
-    width: 65%;
-    top: -35px;
-    left: -50px;
-    transform: rotate(25deg) translateX(50%);
-    opacity: .2;
-}
-#flor-2 .flor-up.left{
-    top: 100px;
-    left: 150px;
-    transform: rotate(-50deg) translateX(-50%);
-}
 .pinmaps{
     animation: pulse 2s infinite;
 }
@@ -339,6 +340,16 @@ p{
     width: 100%;
     max-width: 150px;
     transition: transform 0.3s ease;
+}
+.background-modal {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro transparente */
+    z-index: 9999; /* Por encima de todo */
 }
 /* El Modal (Fondo oscuro transparente) */
 .modal {

@@ -47,13 +47,12 @@ document.addEventListener("DOMContentLoaded", function () {
   
 });
 
-window.addEventListener("load", function() {
+window.addEventListener("DOMContentLoaded", function() {
     const splash = document.getElementById("splash-screen");
-
+    document.body.style.overflow = "hidden"; // Evita que el fondo se desplace mientras el splash está activo
     setTimeout(() => {
         splash.classList.add("hidden");
-        
-        // Opcional: elimina el elemento del DOM después de la transición
+        document.body.style.overflow = "auto"; 
         setTimeout(() => {
             splash.style.display = "none";
         }, 800); // Este tiempo debe coincidir con la transición CSS (0.8s)
@@ -62,38 +61,32 @@ window.addEventListener("load", function() {
 
 
 document.addEventListener("DOMContentLoaded", function () {
+  const backgroundModal = document.querySelector(".background-modal");
   const modal = document.getElementById("modal-confirmacion");
   const btnAbrir = document.getElementById("btn-confirmar");
   const btnCerrar = document.querySelector(".close-modal");
   const formulario = document.getElementById("form-asistencia");
 
   // Abrir y cerrar modal
-  if(btnAbrir) btnAbrir.addEventListener("click", () => modal.style.display = "block");
-  if(btnCerrar) btnCerrar.addEventListener("click", () => modal.style.display = "none");
-  
-  window.addEventListener("click", (e) => {
-    if (e.target === modal) modal.style.display = "none";
-  });
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-  const modal = document.getElementById("modal-confirmacion");
-  const btnAbrir = document.getElementById("btn-confirmar");
-  const btnCerrar = document.querySelector(".close-modal");
-  const formulario = document.getElementById("form-asistencia");
-
-  // Control del Modal (Abrir/Cerrar)
   if(btnAbrir) btnAbrir.addEventListener("click", () => {
-    document.body.style.overflow = "hidden"; // Evita que el fondo se desplace cuando el modal está abierto
+    backgroundModal.style.display = "block";
     modal.style.display = "block";
+    document.body.style.overflow = "hidden"; // Evita que el fondo se desplace cuando el modal está abierto
   });
-  
-  if(btnCerrar) btnCerrar.addEventListener("click", () => modal.style.display = "none");
+  if(btnCerrar) btnCerrar.addEventListener("click", () => {
+    backgroundModal.style.display = "none";
+    modal.style.display = "none";
+    document.body.style.overflow = "auto"; // Restaura el desplazamiento del fondo
+  });
   window.addEventListener("click", (e) => {
-     document.body.style.overflow = "auto"; // Permite el desplazamiento nuevamente cuando el modal se cierra
-    if (e.target === modal) modal.style.display = "none";
+    if (e.target === backgroundModal) {
+      backgroundModal.style.display = "none";
+      modal.style.display = "none";
+      document.body.style.overflow = "auto"; // Restaura el desplazamiento del fondo
+    }
   });
 });
+
 
 let slideIndex = 1;
 showSlides(slideIndex);
@@ -133,3 +126,4 @@ function showSlides(n) {
   slides[slideIndex-1].style.display = "block";  
   dots[slideIndex-1].className += " active-galeria";
 }
+setInterval(() => plusSlides(1), 3000); // Cambia de foto cada 3 segundos (3000 ms)
