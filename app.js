@@ -61,31 +61,103 @@ window.addEventListener("DOMContentLoaded", function() {
 
 
 document.addEventListener("DOMContentLoaded", function () {
-  const backgroundModal = document.querySelector(".background-modal");
   const modal = document.getElementById("modal-confirmacion");
   const btnAbrir = document.getElementById("btn-confirmar");
+  const btnCerrarExito = document.getElementById("btn-cerrar-exito");
   const btnCerrar = document.querySelector(".close-modal");
   const formulario = document.getElementById("form-asistencia");
+  const mensajeExito = document.getElementById("mensaje-exito");
 
-  // Abrir y cerrar modal
-  if(btnAbrir) btnAbrir.addEventListener("click", () => {
-    backgroundModal.style.display = "block";
-    modal.style.display = "block";
-    document.body.style.overflow = "hidden"; // Evita que el fondo se desplace cuando el modal está abierto
+  // 1. Abrir modal
+  btnAbrir.addEventListener("click", () => { 
+    modal.style.display = "flex"; 
+    formulario.style.display = "block";
+    mensajeExito.style.display = "none";
   });
-  if(btnCerrar) btnCerrar.addEventListener("click", () => {
-    backgroundModal.style.display = "none";
+
+  // 2. Cerrar modal (dando clic en la X o fuera del cuadro)
+  const cerrarModal = () => {
     modal.style.display = "none";
-    document.body.style.overflow = "auto"; // Restaura el desplazamiento del fondo
-  });
+    formulario.reset();
+  };
+  if (btnCerrar) {
+    btnCerrar.addEventListener("click", () => cerrarModal());
+  }
   window.addEventListener("click", (e) => {
-    if (e.target === backgroundModal) {
-      backgroundModal.style.display = "none";
-      modal.style.display = "none";
-      document.body.style.overflow = "auto"; // Restaura el desplazamiento del fondo
+    if (e.target === modal) {
+      cerrarModal();
     }
   });
+  if (btnCerrarExito) {
+    btnCerrarExito.addEventListener("click", () => cerrarModal());
+  }
+
+  // 3. Enviar el formulario por POST (Ilimitado y Gratis)
+  formulario.addEventListener("submit", function (e) {
+    e.preventDefault(); // Evita que la página se recargue
+
+    const btnEnviar = document.getElementById("btn-enviar");
+    btnEnviar.innerText = "Enviando...";
+    btnEnviar.disabled = true;
+
+    // Recolectamos los datos del formulario
+    const datos = {
+      Nombre: document.getElementById("input-nombre").value,
+      Asistencia: document.getElementById("select-asistencia").value,
+    };
+
+    // REEMPLAZA AQUÍ CON TU CORREO ELECTRÓNICO
+    fetch(`https://formsubmit.co/ajax/andreshernandez94.ah@gmail.com`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json",
+      },
+      body: JSON.stringify(datos),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        formulario.style.display = "none"; // Oculta el formulario
+        mensajeExito.style.display = "block"; // Muestra el mensaje de éxito
+        formulario.reset(); // Limpia los campos
+      })
+      .catch((error) => {
+        alert("Hubo un error al enviar. Por favor, inténtalo de nuevo.");
+        console.error(error);
+      })
+      .finally(() => {
+        btnEnviar.innerText = "Enviar Confirmación";
+        btnEnviar.disabled = false;
+      });
+  });
 });
+
+// document.addEventListener("DOMContentLoaded", function () {
+//   const backgroundModal = document.querySelector(".background-modal");
+//   const modal = document.getElementById("modal-confirmacion");
+//   const btnAbrir = document.getElementById("btn-confirmar");
+//   const btnCerrar = document.querySelector(".close-modal");
+//   const formulario = document.getElementById("form-asistencia");
+
+//   // Abrir y cerrar modal
+//   if(btnAbrir) btnAbrir.addEventListener("click", () => {
+//     backgroundModal.style.display = "block";
+//     modal.style.display = "block";
+//     document.body.style.overflow = "hidden"; // Evita que el fondo se desplace cuando el modal está abierto
+//   });
+//   if(btnCerrar) btnCerrar.addEventListener("click", () => {
+//     backgroundModal.style.display = "none";
+//     modal.style.display = "none";
+//     document.body.style.overflow = "auto"; // Restaura el desplazamiento del fondo
+//   });
+//   window.addEventListener("click", (e) => {
+//     if (e.target === backgroundModal) {
+//       backgroundModal.style.display = "none";
+//       modal.style.display = "none";
+//       document.body.style.overflow = "auto"; // Restaura el desplazamiento del fondo
+//     }
+//   });
+// });
 
 
 let slideIndex = 1;
