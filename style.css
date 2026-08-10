@@ -400,7 +400,6 @@ p {
     display: flex;
     object-fit: contain;
     justify-content: center;
-    align-items: center;
     overflow: hidden;
     /* Evita que se vea cualquier contenido detrás del splash */
     z-index: 9999;
