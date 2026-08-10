@@ -183,14 +183,14 @@ p {
 
 .frase-amor {
     line-height: 1; 
-    font-size: clamp(1.3rem, 3.5vw, 1.7rem);
+    font-size: clamp(1.5rem, 4vw, 1.2rem);
     margin: 0;
     padding: 0;
     border: none;
     /* Elimina bordes por defecto de blockquote */
 }
 .frase-xl {
-    font-size: clamp(1.5rem, 4vw, 2rem);
+    font-size: clamp(2rem, 4vw, 1.2rem);
 }
 
 #flor-2 .flor-up {
