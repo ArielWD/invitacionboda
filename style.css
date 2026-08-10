@@ -348,9 +348,9 @@ p {
     z-index: -1;
     position: absolute;
     width: 90%;
-    top: 40px;
-    left: -150px;
-    transform: translateX(50%);
+    top: 60%;
+    left: 55%;
+    transform: translate(-50%, -50%);
     opacity: .6;
 }
 
