@@ -150,7 +150,7 @@ p {
     margin: 4rem auto;
 }
 .div-7 {
-    margin: 4rem auto 0 auto;
+    margin: 4rem auto 2rem auto;
 }
 .div-2 {
     margin: 2rem auto;
@@ -316,10 +316,14 @@ p {
 }
 
 .div-9 {
+    margin-top: 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 2rem;
+}
+.div-9 p {
+    width: 80%;
 }
 
 .div-9 img {
