@@ -107,7 +107,7 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
     // REEMPLAZA AQUÍ CON TU CORREO ELECTRÓNICO
-    fetch(`https://formsubmit.co/ajax/andreshernandez94.ah@gmail.com`, {
+    fetch(`https://formsubmit.co/ajax/matrimoniokyk@gmail.com`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
