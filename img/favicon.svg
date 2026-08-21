@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Fondo circular suave (blanco roto/hueso) -->
+  <circle cx="50" cy="50" r="48" fill="#fdf8f2" stroke="#8a7355" stroke-width="2"/>
+  
+  <!-- Iniciales o símbolo central -->
+  <text 
+    x="50%" 
+    y="58%" 
+    font-family="'Playfair Display', 'Cormorant Garamond', Georgia, serif" 
+    font-size="42" 
+    font-weight="bold" 
+    fill="#8a7355" 
+    text-anchor="middle" 
+    dominant-baseline="middle">
+    K&amp;K
+  </text>
+</svg>
