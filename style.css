@@ -216,7 +216,9 @@ p {
 .div-6 p {
     margin: 0 auto;
 }
-
+.recepcion {
+    margin-top: 2rem;
+}
 .div-8 {
     position: absolute;
     top: 0%;
@@ -328,6 +330,14 @@ p {
 
 .div-9 img {
     width: 40%;
+}
+
+.div-12 p {
+    margin: 0 auto;
+    font-size: 1.1rem;
+}
+.div-12 h3 {
+    margin-top: 1rem;
 }
 
 .div-13 {
